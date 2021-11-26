@@ -1,0 +1,133 @@
+
+[[Command]]
+
+    Name = "pronoun"
+    Description = "Add/remove/list your pronouns in this server."
+    DefaultPermission = false
+    AnyoneCanUse = true
+
+    [[Command.Options]]
+
+        Name = "add"
+        Description = "Assign yourself pronouns."
+        Type = 1 # SUB_COMMAND
+        
+        [[Command.Options.Options]]
+
+            Name = "pronouns"
+            Description = 'e.g. "they", "they/them", etc.'
+            Type = 3 # STRING
+            Required = true
+        
+    [[Command.Options]]
+
+        Name = "remove"
+        Description = 'Remove one of your pronoun sets. To find the ID of a pronoun set use "/pronoun list"'
+        Type = 1 # SUB_COMMAND
+
+        [[Command.Options.Options]]
+
+            Name = "id"
+            Description = 'Typing "/pronoun list" will show you the IDs of all your current pronoun sets.'
+            Type = 4 # INTEGER
+            Required = true
+
+    [[Command.Options]]
+
+        Name = "list"
+        Description = "List your pronoun sets."
+        Type = 1 # SUB_COMMAND
+
+[[Command]]
+
+    Name = "role"
+    Description = "Add/remove/list your roles in this server."
+    DefaultPermission = false
+    AnyoneCanUse = true
+
+    [[Command.Options]]
+
+        Name = "add"
+        Description = "Assign yourself a role."
+        Type = 1 # SUB_COMMAND
+        
+        [[Command.Options.Options]]
+
+            Name = "role"
+            Description = 'Choose a role. Typing "/role list all" will give you a description of each.'
+            Type = 3 # STRING
+            Required = true
+        
+    [[Command.Options]]
+
+        Name = "remove"
+        Description = "Remove one of your roles."
+        Type = 1 # SUB_COMMAND
+
+        [[Command.Options.Options]]
+
+            Name = "role"
+            Description = 'Remove a role. Typing "/role list self" will show you all your current roles.'
+            Type = 3 # STRING
+            Required = true
+
+    [[Command.Options]]
+
+        Name = "list"
+        Description = "List roles."
+        Type = 1 # SUB_COMMAND
+
+        [[Command.Options.Options]]
+
+            Name = "which"
+            Description = "Which set of roles do you wish to list?"
+            Type = 3 # STRING
+            Required = true
+
+            [[Command.Options.Options.Choices]]
+
+                Name  = "all"
+                Value = "all"
+
+            [[Command.Options.Options.Choices]]
+
+                Name  = "self"
+                Value = "self"
+
+[[Command]]
+
+    Name = "event"
+    Description = "Add/remove/list all events in this server."
+    DefaultPermission = false
+
+    [[Command.Options]]
+
+        Name = "add"
+        Description = 'Add an event that will ping users with the "event" role when it is close to starting.'
+        Type = 1 # SUB_COMMAND
+
+        [[Command.Options.Options]]
+
+            Name = "url"
+            Description = "e.g. https://storydevs.com/event/TvYW4R11uHk"
+            Type = 3 # STRING
+            Required = true
+        
+    [[Command.Options]]
+
+        Name = "remove"
+        Description = "Remove an event."
+        Type = 1 # SUB_COMMAND
+
+        [[Command.Options.Options]]
+
+            Name = "id"
+            Description = 'Use "/event list" to see event IDs'
+            Type = 4 # INTEGER
+            Required = true
+
+    [[Command.Options]]
+
+        Name = "list"
+        Description = "List all events."
+        Type = 1 # SUB_COMMAND

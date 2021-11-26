@@ -1,0 +1,42 @@
+
+MODERATOR COMMANDS
+
+	/weekly add [string]
+	/weekly remove [id]
+	/weekly list (just show one line summaries)
+
+	/featured add [url]
+	/featured remove [id]
+	/featured list
+
+	/event add [url]
+	/event remove [id]
+	/event list
+
+USER COMMANDS
+
+	/quote add [user] [string]
+	/quote remove [user] [id]
+	/quote list [user]
+
+	/pronouns add [string]
+	/pronouns remove [id]
+	/pronouns list
+
+	/role add [choice] (includes "event")
+	/role remove [id]
+	/role list
+
+	/profile [name#0000]
+
+	/sync [persona handle]
+
+
+Command ideas:
+	- Daily featured server/resource
+	- Weekly question for stimulating conversation
+	- Ability for users to add roles that can be pinged
+	- Ability for mods to link to storydevs event, creating an alert
+		- Discord has native events now but no API yet
+	- /profile @handle command for linking a user's profile they added
+	- pronoun selection

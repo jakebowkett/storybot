@@ -1,0 +1,23 @@
+
+[[Insert]]
+
+    Root = "role"
+    At = ["role.add.role", "role.remove.role"]
+
+    [[Insert.Choices]]
+
+        Name  = "event"
+        Description = "This role is pinged when a community event is about to start."
+        Value = "910115312643485696"
+
+    [[Insert.Choices]]
+
+        Name  = "weekly"
+        Description = "This role is pinged when the weekly discussion/question prompt is updated."
+        Value = "910188652062203924"
+
+    [[Insert.Choices]]
+
+        Name  = "tester"
+        Description = "This role is pinged when opportunities to test new features / bug fixes arise."
+        Value = "910628610296143963"
