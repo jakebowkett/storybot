@@ -59,6 +59,7 @@ func main() {
 	}
 
 	s.Identify.Intents = dgo.IntentsGuildMessages
+	s.Identify.Intents = dgo.IntentsGuildMessageReactions
 
 	_ = s.AddHandler(command.Handler(p))
 

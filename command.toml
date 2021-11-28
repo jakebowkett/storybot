@@ -1,6 +1,20 @@
 
 [[Command]]
 
+    Name = "vote"
+    Description = 'Vote on the provided options e.g. "/vote Apple, Banana, Orange"'
+    DefaultPermission = false
+    AnyoneCanUse = true
+
+    [[Command.Options]]
+
+        Name = "options"
+        Description = 'A comma separated list of choices.'
+        Type = 3 # STRING
+        Required = true
+
+[[Command]]
+
     Name = "pronoun"
     Description = "Add/remove/list your pronouns in this server."
     DefaultPermission = false

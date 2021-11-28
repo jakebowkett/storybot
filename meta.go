@@ -28,3 +28,5 @@ type Params struct {
 	Session     *dgo.Session
 	Database    *DB
 }
+
+type HandlerCallback func(p *Params, i *dgo.Interaction) error

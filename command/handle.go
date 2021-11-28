@@ -7,6 +7,7 @@ import (
 	"storybot/command/event"
 	"storybot/command/pronoun"
 	"storybot/command/role"
+	"storybot/command/vote"
 
 	dgo "github.com/bwmarrin/discordgo"
 )
@@ -33,7 +34,10 @@ func Handler(p *sb.Params) func(s *dgo.Session, i *dgo.InteractionCreate) {
 		p.IntData = data
 		p.Member = i.Member
 		content := ""
+		var callback sb.HandlerCallback
 		switch data.Name {
+		case "vote":
+			content, callback = vote.Handler(p)
 		case "pronoun":
 			content = pronoun.Handler(p)
 		case "role":
@@ -50,6 +54,11 @@ func Handler(p *sb.Params) func(s *dgo.Session, i *dgo.InteractionCreate) {
 		}
 		if err := s.InteractionRespond(i.Interaction, &resp); err != nil {
 			log.Println(err)
+		}
+		if callback != nil {
+			if err := callback(p, i.Interaction); err != nil {
+				log.Println(err)
+			}
 		}
 	}
 }
