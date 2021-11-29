@@ -14,7 +14,7 @@ import (
 )
 
 type event struct {
-	Public int64
+	Public sb.NullInt64
 	Added  string
 	Slug   string
 

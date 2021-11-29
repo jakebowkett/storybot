@@ -2,12 +2,27 @@ package storybot
 
 import (
 	"database/sql"
+	"errors"
 	"fmt"
 	"strings"
 
 	"github.com/jmoiron/sqlx"
 	"github.com/lib/pq"
 )
+
+type NullInt64 int64
+
+func (n *NullInt64) Scan(src interface{}) error {
+	switch m := src.(type) {
+	case int64:
+		*n = NullInt64(m)
+	case nil:
+		*n = 0
+	default:
+		return errors.New("invalid src for NullInt64")
+	}
+	return nil
+}
 
 type DbSliceStr = pq.StringArray
 
