@@ -15,7 +15,7 @@
 
 [[Command]]
 
-    Name = "pronoun"
+    Name = "pronouns"
     Description = "Add/remove/list your pronouns in this server."
     DefaultPermission = false
     AnyoneCanUse = true
@@ -36,13 +36,13 @@
     [[Command.Options]]
 
         Name = "remove"
-        Description = 'Remove one of your pronoun sets. To find the ID of a pronoun set use "/pronoun list"'
+        Description = 'Remove one of your pronoun sets. To find the ID of a pronoun set use "/pronouns list"'
         Type = 1 # SUB_COMMAND
 
         [[Command.Options.Options]]
 
             Name = "id"
-            Description = 'Typing "/pronoun list" will show you the IDs of all your current pronoun sets.'
+            Description = 'Typing "/pronouns list" will show you the IDs of all your current pronoun sets.'
             Type = 4 # INTEGER
             Required = true
 

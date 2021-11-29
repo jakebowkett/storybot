@@ -5,7 +5,7 @@ import (
 
 	sb "storybot"
 	"storybot/command/event"
-	"storybot/command/pronoun"
+	"storybot/command/pronouns"
 	"storybot/command/role"
 	"storybot/command/vote"
 
@@ -38,8 +38,8 @@ func Handler(p *sb.Params) func(s *dgo.Session, i *dgo.InteractionCreate) {
 		switch data.Name {
 		case "vote":
 			content, callback = vote.Handler(p)
-		case "pronoun":
-			content = pronoun.Handler(p)
+		case "pronouns":
+			content = pronouns.Handler(p)
 		case "role":
 			content = role.Handler(p)
 		case "event":

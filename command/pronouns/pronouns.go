@@ -9,7 +9,7 @@ TODO:
 	- if no one is using a pronoun role anymore, delete it from guild
 		- seems we'll need to iterate through every member which is potentially expensive; maybe run this in the background once a day or once a week
 */
-package pronoun
+package pronouns
 
 import (
 	"fmt"
@@ -27,7 +27,7 @@ const (
 	maxPronounsPerMember = 5
 	maxPronounsPerGuild  = 32
 	maxPronounLength     = 16
-	rolePrefix           = "pronoun: "
+	rolePrefix           = "pronouns: "
 )
 
 func Handler(p *sb.Params) string {
@@ -43,7 +43,7 @@ func Handler(p *sb.Params) string {
 	return "No such option for pronoun command."
 }
 
-var isPronoun = regexp.MustCompile(`^[a-zA-Z] *(/ *[a-zA-Z]){0,2}$`)
+var isPronoun = regexp.MustCompile(`^[a-zA-Z]* *(/ *[a-zA-Z]*){0,2}$`)
 
 func add(p *sb.Params) string {
 	generalErr := "Unable to add pronoun set at this time."
